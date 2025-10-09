@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -110,7 +111,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               render={({ field }) => (
                 <FormItem className="text-left">
                   <FormLabel>Instagram ID</FormLabel>
-                  <div className="flex h-10 w-full items-center rounded-md border border-input bg-background text-sm ring-offset-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                  <div className="flex h-10 w-full items-center rounded-md border border-white/20 bg-black/10 text-sm ring-offset-background backdrop-blur-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
                     <span className="pl-3 pr-1 text-muted-foreground">@</span>
                     <FormControl>
                       <Input
