@@ -35,7 +35,7 @@ export default function Home() {
         <div className="animate-in fade-in-50 duration-1000 w-full max-w-md">
           <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl">
             <CardContent className="p-6 text-center">
-                <p className="text-lg sm:text-xl text-muted-foreground mb-4">You are committed with</p>
+                <p className="text-lg sm:text-xl text-muted-foreground mb-4">You Are Committing with</p>
                 <ShimmeringText text="@i.deepak.dev" />
             </CardContent>
           </Card>
