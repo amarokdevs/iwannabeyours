@@ -79,7 +79,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
   }
 
   return (
-    <Card className="w-full max-w-sm sm:max-w-md bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
+    <Card className="w-full max-w-sm sm:max-w-md bg-transparent backdrop-blur-sm border border-white/20 shadow-xl">
       <CardHeader className="text-center p-4 sm:p-6">
         <div className="mx-auto mb-3 sm:mb-4 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-muted">
             <PenSquare className="h-7 w-7 sm:h-8 sm:w-8 text-muted-foreground" />
@@ -99,7 +99,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
                 <FormItem className="text-left">
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" className="bg-black/10 backdrop-blur-sm border-white/20" {...field} />
+                    <Input placeholder="Your name" className="bg-black/20 backdrop-blur-sm border-white/20" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -111,7 +111,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               render={({ field }) => (
                 <FormItem className="text-left">
                   <FormLabel>Instagram ID</FormLabel>
-                  <div className="flex h-10 w-full items-center rounded-md border border-white/20 bg-black/10 text-sm ring-offset-background backdrop-blur-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                  <div className="flex h-10 w-full items-center rounded-md border border-white/20 bg-black/20 text-sm ring-offset-background backdrop-blur-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
                     <span className="pl-3 pr-1 text-muted-foreground">@</span>
                     <FormControl>
                       <Input

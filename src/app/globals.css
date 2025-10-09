@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 222 83% 4%; /* Dark Blue */
+    --background: 210 80% 10%; /* Dark Blue */
     --foreground: 0 0% 94.1%; /* #F0F0F0 */
     --card: 222 83% 6%;
     --card-foreground: 0 0% 94.1%;
@@ -41,7 +41,7 @@
     --sidebar-ring: 0 0% 66.3%;
   }
   .dark {
-    --background: 222 83% 4%; /* Dark Blue */
+    --background: 210 80% 10%; /* Dark Blue */
     --foreground: 0 0% 94.1%;
     --card: 222 83% 6%;
     --card-foreground: 0 0% 94.1%;
@@ -85,6 +85,15 @@
   body {
     @apply bg-background text-foreground;
     background: linear-gradient(to bottom, hsl(210, 80%, 30%), #000000);
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px hsl(var(--background)) inset !important;
+    -webkit-text-fill-color: hsl(var(--foreground)) !important;
+    transition: background-color 5000s ease-in-out 0s;
+    background-color: transparent !important;
   }
 }
 
