@@ -23,18 +23,12 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
+        protocol: 'https' as const,
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
       },
     ],
-  },
-  compiler: {
-    react: {
-      useSource: true,
-      compilerSource: 'compiler-source'
-    }
   },
   experimental: {
     reactCompiler: true,
