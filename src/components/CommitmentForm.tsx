@@ -134,7 +134,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               )}
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sealing..." : "Seal the Commitment"}
+              {isSubmitting ? "Sealing..." : "Seal the Commitment ❤️"}
             </Button>
           </CardFooter>
         </form>
