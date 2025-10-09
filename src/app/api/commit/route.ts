@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     }
 
     const payload = {
-      content: `New commitment:\nName: ${name}\nInstagram: ${instagramId}`,
+      content: `💖 New Commitment 💖\nName: ${name}\nInstagram: ${instagramId}`,
     };
 
     const response = await fetch(webhookUrl, {
