@@ -48,6 +48,7 @@ export default function Home() {
                     <Button
                         onClick={handleCommitClick}
                         size="lg"
+                        variant={clickCount === 1 ? "destructive" : "default"}
                         className="mt-8 px-10 py-7 text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform"
                     >
                         {buttonTexts[clickCount]}
