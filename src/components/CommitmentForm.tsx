@@ -54,18 +54,18 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
 
   return (
     <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl">
-      <CardHeader className="text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-muted">
-            <PenSquare className="h-8 w-8 text-muted-foreground" />
+      <CardHeader className="text-center p-4 sm:p-6">
+        <div className="mx-auto mb-3 sm:mb-4 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-muted">
+            <PenSquare className="h-7 w-7 sm:h-8 sm:w-8 text-muted-foreground" />
         </div>
-        <CardTitle className="font-headline text-3xl">Your Details</CardTitle>
-        <CardDescription className="pt-2">
+        <CardTitle className="font-headline text-2xl sm:text-3xl">Your Details</CardTitle>
+        <CardDescription className="pt-1 sm:pt-2 text-sm sm:text-base">
           This is the beginning of something beautiful. Please share your details to connect.
         </CardDescription>
       </CardHeader>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <CardContent className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+          <CardContent className="space-y-4 px-4 sm:px-6">
             <FormField
               control={form.control}
               name="name"
@@ -93,11 +93,11 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               )}
             />
           </CardContent>
-          <CardFooter>
+          <CardFooter className="px-4 pb-4 sm:px-6 sm:pb-6">
             <Button
               type="submit"
               className={cn(
-                "w-full h-12 text-lg font-semibold",
+                "w-full h-11 sm:h-12 text-base sm:text-lg font-semibold",
                 isSubmitting && "animate-pulse"
               )}
               disabled={isSubmitting}
