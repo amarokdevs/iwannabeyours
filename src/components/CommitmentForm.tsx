@@ -99,7 +99,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
                 <FormItem className="text-left">
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input placeholder="Your name" className="bg-black/10 backdrop-blur-sm border-white/20" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
