@@ -14,7 +14,7 @@ type HomePageProps = {
 };
 
 
-export default function Home({}: HomePageProps) {
+export default function Home({ searchParams }: HomePageProps) {
   const [clickCount, setClickCount] = useState(0);
   const [showShimmer, setShowShimmer] = useState(false);
   const [showForm, setShowForm] = useState(false);
@@ -56,7 +56,8 @@ export default function Home({}: HomePageProps) {
           <Button
             onClick={handleContinue}
             size="lg"
-            className="px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform"
+            variant="outline"
+            className="px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20"
           >
             Continue
           </Button>
