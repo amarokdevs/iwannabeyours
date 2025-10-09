@@ -47,7 +47,7 @@ export default function Home({ searchParams }: HomePageProps) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 text-center text-foreground overflow-hidden">
         <div className="animate-in fade-in-50 duration-1000 w-full max-w-md flex flex-col items-center gap-6">
-          <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl bg-card/80 backdrop-blur-sm">
+          <Card className="w-full max-w-sm sm:max-w-md bg-white/10 backdrop-blur-sm border border-white/20 shadow-xl">
             <CardContent className="p-6 text-center">
                 <p className="text-lg sm:text-xl text-muted-foreground mb-4">You Are Getting Committing With</p>
                 <ShimmeringText text="@i.deepak.dev" />
