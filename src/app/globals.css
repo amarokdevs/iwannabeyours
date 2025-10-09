@@ -84,7 +84,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(to bottom, hsl(222, 83%, 4%), #000000);
+    background: linear-gradient(to bottom, hsl(210, 80%, 30%), #000000);
   }
 }
 
@@ -128,7 +128,7 @@
 
   .particle {
     position: absolute;
-    bottom: 0;
+    top: var(--y-pos);
     left: var(--x-pos);
     width: var(--size);
     height: var(--size);

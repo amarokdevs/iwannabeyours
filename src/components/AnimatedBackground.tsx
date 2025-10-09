@@ -7,28 +7,33 @@ const AnimatedBackground = () => {
   const numParticles = 50;
 
   useEffect(() => {
-    const generateParticles = () => {
-      return Array.from({ length: numParticles }).map((_, i) => {
-        const size = `${Math.random() * 3 + 1}px`;
-        const duration = `${Math.random() * 20 + 10}s`;
-        const delay = `${Math.random() * -30}s`;
-        const xPos = `${Math.random() * 100}%`;
-        
-        return (
-          <div
-            key={i}
-            className="particle"
-            style={{
-              '--size': size,
-              '--duration': duration,
-              '--delay': delay,
-              '--x-pos': xPos,
-            } as React.CSSProperties}
-          />
-        );
-      });
-    };
-    setParticles(generateParticles());
+    // This check ensures that the code runs only on the client side.
+    if (typeof window !== 'undefined') {
+      const generateParticles = () => {
+        return Array.from({ length: numParticles }).map((_, i) => {
+          const size = `${Math.random() * 3 + 1}px`;
+          const duration = `${Math.random() * 20 + 10}s`;
+          const delay = `${Math.random() * -30}s`;
+          const xPos = `${Math.random() * 100}%`;
+          const yPos = `${Math.random() * 100}%`;
+          
+          return (
+            <div
+              key={i}
+              className="particle"
+              style={{
+                '--size': size,
+                '--duration': duration,
+                '--delay': delay,
+                '--x-pos': xPos,
+                '--y-pos': yPos,
+              } as React.CSSProperties}
+            />
+          );
+        });
+      };
+      setParticles(generateParticles());
+    }
   }, []);
 
   return (
