@@ -78,7 +78,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
   }
 
   return (
-    <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl">
+    <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl bg-card/80 backdrop-blur-sm">
       <CardHeader className="text-center p-4 sm:p-6">
         <div className="mx-auto mb-3 sm:mb-4 flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-muted">
             <PenSquare className="h-7 w-7 sm:h-8 sm:w-8 text-muted-foreground" />
