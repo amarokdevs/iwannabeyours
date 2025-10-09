@@ -9,19 +9,26 @@ import { ShimmeringText } from "@/components/ShimmeringText";
 
 export default function Home() {
   const [clickCount, setClickCount] = useState(0);
-  const [isFinallyCommitted, setIsFinallyCommitted] = useState(false);
+  const [showShimmer, setShowShimmer] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleCommitClick = () => {
     if (clickCount === 1) {
-      setIsFinallyCommitted(true);
+      setShowShimmer(true);
     } else {
       setClickCount((prev) => prev + 1);
     }
   };
 
+  const handleContinue = () => {
+    setShowShimmer(false);
+    setShowForm(true);
+  };
+
   const handleSubmitSuccess = () => {
     setIsSubmitted(true);
+    setShowForm(false);
   };
 
   const buttonTexts = [
@@ -29,16 +36,23 @@ export default function Home() {
     "Are you sure? There is no go back from it.",
   ];
 
-  if (isFinallyCommitted && !isSubmitted) {
+  if (showShimmer) {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4 sm:p-6 text-center text-foreground overflow-hidden">
-        <div className="animate-in fade-in-50 duration-1000 w-full max-w-md">
+        <div className="animate-in fade-in-50 duration-1000 w-full max-w-md flex flex-col items-center gap-6">
           <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl">
             <CardContent className="p-6 text-center">
                 <p className="text-lg sm:text-xl text-muted-foreground mb-4">You Are Committing with</p>
                 <ShimmeringText text="@i.deepak.dev" />
             </CardContent>
           </Card>
+          <Button
+            onClick={handleContinue}
+            size="lg"
+            className="px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform"
+          >
+            Continue
+          </Button>
         </div>
       </main>
     );
@@ -57,7 +71,7 @@ export default function Home() {
                     The user will text you later and you can plan the future plans there.
                     </p>
                 </div>
-            ) : clickCount >= 2 ? (
+            ) : showForm ? (
                 <CommitmentForm onSubmitSuccess={handleSubmitSuccess} />
             ) : (
                 <div className="flex flex-col items-center gap-4">
