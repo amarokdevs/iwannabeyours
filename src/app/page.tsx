@@ -40,7 +40,12 @@ export default function Home({ searchParams }: HomePageProps) {
 
   const buttonTexts = [
     "Are you sure to get committed?",
-    "Are you sure? There is no go back from it.",
+    (
+        <div className="text-center">
+            <div>Are You Sure?</div>
+            <div className="text-sm font-normal">There Is No Go Back From It.</div>
+        </div>
+    )
   ];
 
   if (showShimmer) {
