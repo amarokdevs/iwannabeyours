@@ -62,16 +62,17 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to send commitment.');
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to send commitment.');
         }
 
         onSubmitSuccess();
-    } catch (error) {
+    } catch (error: any) {
         console.error("Error submitting form:", error);
         toast({
             variant: "destructive",
             title: "Something went wrong",
-            description: "Could not save your commitment. Please try again.",
+            description: error.message || "Could not save your commitment. Please try again.",
         });
     } finally {
         setIsSubmitting(false);
@@ -112,7 +113,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
                 <FormItem className="text-left">
                   <FormLabel>Instagram ID</FormLabel>
                   <div className="flex h-10 w-full items-center rounded-md border border-white/20 bg-black/20 text-sm ring-offset-background backdrop-blur-sm focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
-                    
+                    <span className="pl-3 pr-1 text-muted-foreground">@</span>
                     <FormControl>
                       <Input
                         placeholder="username"
