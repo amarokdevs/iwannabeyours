@@ -8,7 +8,12 @@ import { Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShimmeringText } from "@/components/ShimmeringText";
 
-export default function Home() {
+type HomePageProps = {
+  // You can add any page-specific props here if needed in the future
+};
+
+
+export default function Home({}: HomePageProps) {
   const [clickCount, setClickCount] = useState(0);
   const [showShimmer, setShowShimmer] = useState(false);
   const [showForm, setShowForm] = useState(false);
