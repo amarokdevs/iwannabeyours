@@ -7,9 +7,10 @@ import { CommitmentForm } from "@/components/CommitmentForm";
 import { Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShimmeringText } from "@/components/ShimmeringText";
+import { cn } from "@/lib/utils";
 
 type HomePageProps = {
-  // You can add any page-specific props here if needed in the future
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
 
@@ -93,7 +94,10 @@ export default function Home({}: HomePageProps) {
                         onClick={handleCommitClick}
                         size="lg"
                         variant={clickCount === 1 ? "red-velvet" : "destructive"}
-                        className="mt-8 px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform"
+                        className={cn(
+                          "mt-8 px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform",
+                          clickCount === 0 && "bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20"
+                        )}
                     >
                         {buttonTexts[clickCount]}
                     </Button>
