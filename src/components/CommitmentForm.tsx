@@ -48,27 +48,22 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
-    const webhookUrl = "https://discord.com/api/webhooks/1425895945081454744/QuqF8WadjMTYvDbrzISWZrg3BCjL1W1attH6a6hhMz4uQDRqZH0A_8yI2K0K5D823wZ_";
-    const payload = {
-        content: `New commitment:\nName: ${values.name}\nInstagram: ${values.instagramId}`
-    };
-
     try {
-        const response = await fetch(webhookUrl, {
+        const response = await fetch('/api/commit', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(values),
         });
 
         if (!response.ok) {
-            throw new Error('Failed to send data to Discord.');
+            throw new Error('Failed to send commitment.');
         }
 
         onSubmitSuccess();
     } catch (error) {
-        console.error("Error sending to webhook:", error);
+        console.error("Error submitting form:", error);
         toast({
             variant: "destructive",
             title: "Something went wrong",
