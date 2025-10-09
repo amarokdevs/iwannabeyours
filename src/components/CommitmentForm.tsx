@@ -54,7 +54,10 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(values),
+            body: JSON.stringify({
+              name: values.name,
+              instagramId: `@${values.instagramId}`
+            }),
         });
 
         if (!response.ok) {
@@ -107,9 +110,16 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               render={({ field }) => (
                 <FormItem className="text-left">
                   <FormLabel>Instagram ID</FormLabel>
-                  <FormControl>
-                    <Input placeholder="@username" {...field} />
-                  </FormControl>
+                  <div className="flex h-10 w-full items-center rounded-md border border-input bg-background text-sm ring-offset-background focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+                    <span className="pl-3 pr-1 text-muted-foreground">@</span>
+                    <FormControl>
+                      <Input
+                        placeholder="username"
+                        className="border-0 bg-transparent px-0 focus-visible:ring-0 focus-visible:ring-offset-0 h-full"
+                        {...field}
+                      />
+                    </FormControl>
+                  </div>
                   <FormMessage />
                 </FormItem>
               )}
