@@ -23,7 +23,8 @@ export async function POST(request: Request) {
 
     if (!webhookUrl) {
       console.error("Discord webhook URL is not configured.");
-      return NextResponse.json({ message: 'Server configuration error.' }, { status: 500 });
+      // Provide a clearer error message for Vercel deployment
+      return NextResponse.json({ message: 'Server is not configured for notifications. Please contact the administrator.' }, { status: 500 });
     }
 
     const payload = {
