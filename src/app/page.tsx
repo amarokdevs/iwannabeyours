@@ -40,7 +40,7 @@ export default function Home() {
             ) : (
                 <div className="flex flex-col items-center gap-4">
                     <h1 className="text-5xl md:text-6xl font-headline tracking-tight">
-                        Commitment Journey
+                        Need a Update ?
                     </h1>
                     <p className="text-xl text-muted-foreground">
                         A single click to start a new chapter.
