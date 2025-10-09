@@ -17,6 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenSquare } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -93,7 +94,14 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
             />
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full h-12 text-lg font-semibold" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className={cn(
+                "w-full h-12 text-lg font-semibold",
+                isSubmitting && "animate-pulse"
+              )}
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Sealing..." : "Seal the Commitment"}
             </Button>
           </CardFooter>
