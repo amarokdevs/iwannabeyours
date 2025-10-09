@@ -30,25 +30,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  compiler: {
+    react: {
+      useSource: true,
+      compilerSource: 'compiler-source'
+    }
+  },
   experimental: {
     reactCompiler: true,
-    babel: {
-      plugins: [
-        [
-          'babel-plugin-react-compiler',
-          {
-            compilationMode: 'annotation',
-            source: 'compiler-source',
-          },
-        ],
-        [
-          '@babel/plugin-transform-react-jsx-source',
-          {
-            fileName: 'data-source',
-          },
-        ],
-      ],
-    },
   },
 };
 
