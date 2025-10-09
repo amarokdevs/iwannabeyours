@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     
     const { name, instagramId } = validation.data;
 
-    const webhookUrl = "https://discord.com/api/webhooks/1425982730931539978/_nRj_T25_iTpQ09rOsCFgqidPvaTyZZeDcCfQn91BTBt9dxMpben3PXM6CCCJVXkjD3l";
+    const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
 
     if (!webhookUrl) {
       console.error("Discord webhook URL is not configured.");
