@@ -54,7 +54,7 @@ export default function Home({ searchParams }: HomePageProps) {
         <div className="animate-in fade-in-50 duration-1000 w-full max-w-md flex flex-col items-center gap-6">
           <Card className="w-full max-w-sm sm:max-w-md bg-white/5 backdrop-blur-sm border border-white/20 shadow-xl">
             <CardContent className="p-6 text-center">
-                <p className="text-lg sm:text-xl text-muted-foreground mb-4">You Are Getting Committing With</p>
+                <p className="text-lg sm:text-xl text-muted-foreground mb-4">You are Getting Committed With</p>
                 <ShimmeringText text="@i.deepak.dev" />
             </CardContent>
           </Card>
