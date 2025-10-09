@@ -96,7 +96,7 @@ export default function Home({}: HomePageProps) {
                         variant={clickCount === 1 ? "red-velvet" : "destructive"}
                         className={cn(
                           "mt-8 px-8 sm:px-10 py-6 sm:py-7 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 ease-in-out hover:scale-105 active:scale-100 transform",
-                          clickCount === 0 && "bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20"
+                          "bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20"
                         )}
                     >
                         {buttonTexts[clickCount]}
