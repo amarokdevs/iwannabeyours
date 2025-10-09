@@ -70,7 +70,7 @@ export default function Home({ searchParams }: HomePageProps) {
     <div className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 text-center text-foreground overflow-hidden">
         <div className="animate-in fade-in-50 duration-1000 w-full max-w-md">
             {isSubmitted ? (
-                <Card className="bg-card/80 backdrop-blur-sm p-6 sm:p-8">
+                <Card className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 sm:p-8">
                     <div className="space-y-4">
                         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary">
                             <Heart className="h-8 w-8 text-primary-foreground" />
