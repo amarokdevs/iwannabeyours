@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { PenSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -34,6 +35,7 @@ type CommitmentFormProps = {
 
 export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,11 +47,36 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    console.log("Form submitted:", values);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    onSubmitSuccess();
+    
+    const webhookUrl = "https://discord.com/api/webhooks/1425895945081454744/QuqF8WadjMTYvDbrzISWZrg3BCjL1W1attH6a6hhMz4uQDRqZH0A_8yI2K0K5D823wZ_";
+    const payload = {
+        content: `New commitment:\nName: ${values.name}\nInstagram: ${values.instagramId}`
+    };
+
+    try {
+        const response = await fetch(webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to send data to Discord.');
+        }
+
+        onSubmitSuccess();
+    } catch (error) {
+        console.error("Error sending to webhook:", error);
+        toast({
+            variant: "destructive",
+            title: "Something went wrong",
+            description: "Could not save your commitment. Please try again.",
+        });
+    } finally {
+        setIsSubmitting(false);
+    }
   }
 
   return (
