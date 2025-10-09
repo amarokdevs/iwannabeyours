@@ -4,13 +4,20 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CommitmentForm } from "@/components/CommitmentForm";
 import { Heart } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ShimmeringText } from "@/components/ShimmeringText";
 
 export default function Home() {
   const [clickCount, setClickCount] = useState(0);
+  const [isFinallyCommitted, setIsFinallyCommitted] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleCommitClick = () => {
-    setClickCount((prev) => prev + 1);
+    if (clickCount === 1) {
+      setIsFinallyCommitted(true);
+    } else {
+      setClickCount((prev) => prev + 1);
+    }
   };
 
   const handleSubmitSuccess = () => {
@@ -21,6 +28,21 @@ export default function Home() {
     "Are you sure to get committed?",
     "Are you sure? There is no go back from it.",
   ];
+
+  if (isFinallyCommitted && !isSubmitted) {
+    return (
+      <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4 sm:p-6 text-center text-foreground overflow-hidden">
+        <div className="animate-in fade-in-50 duration-1000 w-full max-w-md">
+          <Card className="w-full max-w-sm sm:max-w-md border-border/50 shadow-xl">
+            <CardContent className="p-6 text-center">
+                <p className="text-lg sm:text-xl text-muted-foreground mb-4">You are committed with</p>
+                <ShimmeringText text="@i.deepak.dev" />
+            </CardContent>
+          </Card>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-background p-4 sm:p-6 text-center text-foreground overflow-hidden">
