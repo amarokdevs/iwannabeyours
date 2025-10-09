@@ -92,7 +92,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="text-left">
                   <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Your name" {...field} />
@@ -105,7 +105,7 @@ export function CommitmentForm({ onSubmitSuccess }: CommitmentFormProps) {
               control={form.control}
               name="instagramId"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="text-left">
                   <FormLabel>Instagram ID</FormLabel>
                   <FormControl>
                     <Input placeholder="@username" {...field} />
