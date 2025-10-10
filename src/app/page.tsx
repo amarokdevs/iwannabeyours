@@ -43,7 +43,7 @@ export default function Home({ searchParams }: HomePageProps) {
     (
         <div className="text-center">
             <div>Are You Sure?</div>
-            <div className="text-sm font-normal">There Is No Go Back From It.</div>
+            <div className="text-sm font-normal">Once Done, It’s Done.</div>
         </div>
     )
   ];
