@@ -39,7 +39,7 @@ export default function Home({ searchParams }: HomePageProps) {
   };
 
   const buttonTexts = [
-    "Are you sure to get committed?",
+    "Ready to write our story ?",
     (
         <div className="text-center">
             <div>Are You Sure?</div>
