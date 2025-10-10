@@ -85,6 +85,10 @@
   body {
     @apply bg-background text-foreground;
     background: linear-gradient(to bottom, hsl(210, 80%, 30%), #000000);
+    user-select: none; /* Disables text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
   }
   input:-webkit-autofill,
   input:-webkit-autofill:hover,

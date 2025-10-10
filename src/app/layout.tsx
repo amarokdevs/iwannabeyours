@@ -5,7 +5,7 @@ import { AnimatedBackground } from '@/components/AnimatedBackground';
 import { InspectElement } from '@/components/InspectElement';
 
 export const metadata: Metadata = {
-  title: 'Commitment Journey',
+  title: 'Our Life',
   description: 'A journey of commitment',
 };
 
